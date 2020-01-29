@@ -1,0 +1,73 @@
+########~~~~PYTHON VE DJANGO ILE WEB PROGRAMLAMA~~~~#######
+
+1- Yazmak istedigimiz dizinde bir klasor olusturup, Virtual environnment olusturarak basladik
+
+virtualenv -p python3 .venv //.venv sanal ortamin ismi ozel bir durumu yok!
+
+2- Django kurduk
+
+pip install django==2.2
+
+3- git reposu olusturduk.
+
+git init
+git checkout -b rguloztrk   //calisilan dosyayi belirttik
+git status
+nano .gitignore
+->> bin/
+->> include/
+->> lib/   kaydet,cik
+git status 
+git add .
+git status
+git commit -am "initial"
+git push origin rguloztrk
+git status
+git log
+ 
+4- Sonrasinda olusturdugumuz sanal ortami active ediyoruz
+
+source .venv/bin/activate
+
+5- Bulundugunuz dizin icinde 'src' adli yeni bir kalsor olusturun
+
+mkdir src
+cd src
+
+6- Django ile yeni proje olusturun
+
+django-admin startproject yeniProje .
+
+7- Projeyi editorde aciyoruz
+
+code .  //VSCode icin kullanilan kisayol
+
+8- Django ile ilk uygulamayi  ayaga kaldirin
+
+./manage.py startapp post   //veya
+python3 manage.py startapp post //post uygulamamiza verdigimiz isim
+
+9- Uygulamamizin yapilandirilmasi gercekleniyor
+
+model.py
+->>class Author(model.Model):
+->>    first_name=model.CharField(max_length=30)
+->>    last_name=model.CharField(max_length=30)    //eklemeleri yapip kaydediyoruz
+
+in Terminal:
+
+./manage.py makemigrations  //veya  python3 manage.py makemigrations
+./manage.py migrate
+./manage.py createsuperuser
+./manage.py runserver
+
+10- Baslatilan server ile url'e gdip /admin uzantisina gidiyoruz
+ 
+11- OLusturdugumuz kullanici ve sifre ile giris yapip giris saydamizi goruntuluyoruz
+
+
+
+
+
+
+NNOT!!Modelleri eklemeden migration yapmayin
